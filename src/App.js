@@ -9,6 +9,7 @@ client.send('{"type": "join","id": "15b5c75e-d857-4545-8239-13c9161c97f3","usern
 
 client.onmessage = function(event) {
 var mensaje = JSON.parse(event.data);
+console.log(event.data);
 if (mensaje["type"]=== "message"){
     console.log(mensaje["message"]["content"])
   }

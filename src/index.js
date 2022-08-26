@@ -5,6 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+let client = new WebSocket("wss://tarea-1.2022-2.tallerdeintegracion.cl/connect");
+client.onopen = function(e) {
+console.log("[open] Connection established");
+client.send('{"type": "join","id": "15b5c75e-d857-4545-8239-13c9161c97f3","username": "Tomás"}');
+};
 root.render(
   <React.StrictMode>
     <App />
