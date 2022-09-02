@@ -1,9 +1,8 @@
 import '../App.css';
-import React, { Component } from 'react';
 
-const client = new WebSocket("wss://tarea-1.2022-2.tallerdeintegracion.cl/connect");
+//const client = new WebSocket("wss://tarea-1.2022-2.tallerdeintegracion.cl/connect");
 
-export default class Websocket extends Component {
+/*export default class Websocket extends Component {
 
   state = {
   messages: []
@@ -31,13 +30,15 @@ if (mensaje["type"]=== "message"){
     }));
   }
 }.bind(this);
-}
+}*/
 
-render() {
+//render() {
+/*export default function Mensajes(messages){
+  console.log(messages);
 return(
     <div>
       <h1 className='Chat'>Chat</h1>
-        {this.state.messages.map(msg => <div  key={msg.user + msg.date} className="card">
+        {messages.map(msg => <div  key={msg.user + msg.date} className="card">
             <div className="card-body">
             <h5 className="card-title">{msg.user}:</h5>
             <h6 className="card-subtitle mb-2 text-muted">{msg.date.split(" ")[0]}</h6>
@@ -47,6 +48,6 @@ return(
     </div>
     )
 };
-}
+//}*/
 
 //{this.state.messages.map(msg => <p>{msg.usr}: {msg.msg}</p>)}
