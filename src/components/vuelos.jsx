@@ -24,8 +24,8 @@ export default function Vuelos(props){
             <tbody>
              
             {Object.entries(vuelos_tabla).map(([key, value])=>(
-                <tr>
-                <th scope="row" key = {key}>{key}</th>
+                <tr key = {key}>
+                <th scope="row" >{key}</th>
                 <td>{value["origen"]}</td>
                 <td>{value["destino"]}</td>
                 <td>{value["hora_des"].split(" ")[0] +" "+ value["hora_des"].split(" ")[1].split(".")[0]}</td>

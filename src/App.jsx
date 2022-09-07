@@ -15,6 +15,7 @@ export default class App extends Component{
     messages: [],
     vuelos: [],
     aviones: {},
+    evento: {},
     }
 
   scrollToBottom = () => {
@@ -53,8 +54,12 @@ export default class App extends Component{
       airline: mensaje["plane"]["airline"]["name"], lat: mensaje["plane"]["position"]["lat"], long: mensaje["plane"]["position"]["long"],
       destino_lat: mensaje["plane"]["heading"]["lat"], destino_long: mensaje["plane"]["heading"]["long"]
     }
-      
+    }
+    if (mensaje["type"] === "take-off" || mensaje["type"] === "landing" || mensaje["type"] === "crashed"){
+        this.state.evento["evento"] = {id: mensaje["flight_id"], tipo: mensaje["type"], lat: 0, long: 0} //para guardar un solo evento, y así no se vuelve  a renderear?
       }
+    
+
     //this.scrollToBottom();
     }.bind(this);
     }
@@ -81,7 +86,7 @@ export default class App extends Component{
   <div className="row">
     <div className="col-sm-8">
       
-      <Mapa dict = {this.state.vuelos} aviones = {this.state.aviones}/>
+      <Mapa dict = {this.state.vuelos} aviones = {this.state.aviones} evento = {this.state.evento}/>
      
     </div>
     <div className="col-sm-4">
